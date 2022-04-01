@@ -1,0 +1,4 @@
+{
+  "using": "css selector",
+  "value": "button[class*='react-calendar__month-view__days__day']"
+}

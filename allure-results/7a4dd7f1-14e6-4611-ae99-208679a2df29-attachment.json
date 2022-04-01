@@ -1,0 +1,4 @@
+{
+  "using": "xpath",
+  "value": "//h4[normalize-space()=\"Define first payment date\"]"
+}

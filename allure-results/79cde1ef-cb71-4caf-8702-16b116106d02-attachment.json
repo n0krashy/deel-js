@@ -1,0 +1,13 @@
+{
+  "script": "return (function (el1, el2) { return el1 === el2; }).apply(null, arguments)",
+  "args": [
+    {
+      "element-6066-11e4-a52e-4f735466cecf": "ca349eff-46f4-454a-8fe7-c322e527375c",
+      "ELEMENT": "ca349eff-46f4-454a-8fe7-c322e527375c"
+    },
+    {
+      "element-6066-11e4-a52e-4f735466cecf": "912746d5-1427-4f24-9cef-1b15ac92d0f0",
+      "ELEMENT": "912746d5-1427-4f24-9cef-1b15ac92d0f0"
+    }
+  ]
+}

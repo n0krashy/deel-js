@@ -1,0 +1,4 @@
+{
+  "using": "xpath",
+  "value": "//label[normalize-space()='Payment frequency']"
+}
