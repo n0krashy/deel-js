@@ -21,8 +21,7 @@ exports.config = {
     // will be called from there.
     //
     specs: [
-        // './test/contracts/**/*.js'
-        './test/contracts/milestone.e2e.js'
+        './test/contracts/**/*.js'
     ],
     // Patterns to exclude.
     exclude: [

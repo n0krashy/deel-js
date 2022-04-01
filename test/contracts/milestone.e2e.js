@@ -1,12 +1,11 @@
 const LoginPage = require('../pageobjects/login.page');
 const HomePage = require('../pageobjects/home.page');
 const CreatePage = require('../pageobjects/create.page');
-const FixedRateBasicPage = require('../pageobjects/milestone/milestone.basic.page');
-const FixedRatePaymentPage = require('../pageobjects/milestone/milestone.payment.page');
-const FixedRateSpecialClausePage = require('../pageobjects/milestone/milestone.specialclause.page');
-const FixedRateCompliancePage = require('../pageobjects/milestone/milestone.compliance.page');
+const MilestoneBasicPage = require('../pageobjects/milestone/milestone.basic.page');
+const MilestonePaymentPage = require('../pageobjects/milestone/milestone.payment.page');
+const MilestoneSpecialClausePage = require('../pageobjects/milestone/milestone.specialclause.page');
+const MilestoneCompliancePage = require('../pageobjects/milestone/milestone.compliance.page');
 const ContractPage = require('../pageobjects/contract.page');
-const contractType = "Milestone";
 let contractName = "New Milestone";
 let country = "United States";
 let state = "Colorado";
@@ -38,27 +37,26 @@ describe('Create a Fixed Term contract', () => {
     });
 
     it('should fill first page', async () => {
-        await FixedRateBasicPage.fillMandatoryFields(contractName, country, state, scope);
+        await MilestoneBasicPage.fillMandatoryFields(contractName, country, state, scope);
     });
 
     it('should fill payment page', async () => {
-        await FixedRatePaymentPage.fillMandatoryFields(currency, milestone, amount);
-        amount = await FixedRatePaymentPage.amount.getValue();
-        await FixedRatePaymentPage.submit();
+        await MilestonePaymentPage.fillMandatoryFields(currency, milestone, amount);
+        amount = await MilestonePaymentPage.amount.getValue();
+        await MilestonePaymentPage.submit();
     });
 
     it('should add a special clause payment page', async () => {
-        await FixedRateSpecialClausePage.addSpecialClause(specialClause);
+        await MilestoneSpecialClausePage.addSpecialClause(specialClause);
     });
 
     it('should create the contract', async () => {
-        await FixedRateCompliancePage.submit();
+        await MilestoneCompliancePage.submit();
     });
 
     it('should verify the contract details', async () => {
         await expect(browser).toHaveUrlContaining('https://app.letsdeel.com/contract/')
         await expect(ContractPage.contractName).toHaveText(contractName);
-        // await expect(ContractPage.contractType).toHaveText(contractType);
         await expect(ContractPage.country).toHaveTextContaining(country);
         await expect(ContractPage.country).toHaveTextContaining(state);
         await expect(ContractPage.amount).toHaveTextContaining(amount);
