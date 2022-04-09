@@ -14,7 +14,7 @@ let state = "Colorado";
 let scope = "My scope";
 let rate = "1000";
 let currency = "GBP - British Pound";
-let frequency = "Weekly"
+let frequency = "Weekly";
 let specialClause = "This is special Clause!";
 
 describe('Create a Fixed Term contract', () => {

@@ -29,7 +29,7 @@ class Calendar {
             if(await allDaysList[i].isEqual(await this.today)){
                 if (i === 0){
                     await this.previousMonth.click();
-                    yesterday = await this.allDays[length];
+                    yesterday = await this.allDays[length-1];
                 } else {
                     yesterday = allDaysList[i-1];
                 }
